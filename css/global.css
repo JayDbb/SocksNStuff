@@ -69,8 +69,8 @@ p{
     .product-card img {
         height: 250px; /* Set the desired height for all images */
         width: 100%; /* Ensure the images span the width of the container */
-        object-fit: cover; /* Crop the image if it exceeds the container */
-        object-position: top; /* Align the image to the top, cutting off the bottom */
+        /*object-fit: cover;*/ /* Crop the image if it exceeds the container */
+        /*object-position: top;*/ /* Align the image to the top, cutting off the bottom */
     }
 
 
