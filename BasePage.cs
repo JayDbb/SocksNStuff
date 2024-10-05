@@ -117,12 +117,24 @@ namespace SocksNStuff
             string newQuantity = textBox.Text;
 
             int quantity;
-            if (int.TryParse(newQuantity, out quantity))
+            if (int.TryParse(newQuantity, out quantity) && quantity >= 0)
             {
+                              
                 errorlabel.Text = "";
                 errorlabel.Visible = false;
 
                 List<CartItem> cartItems = Session["CartItems"] as List<CartItem>;
+
+                //if quantity 0, note it as removal
+                if (quantity == 0)
+                {
+                    cartItems.Remove(cartItems.Find(x => x.Id == productId));
+
+                    Session["CartItems"] = cartItems;
+                    Response.Redirect("/Cart");
+                    return;
+                }
+
                 foreach (var item in cartItems)
                 {
 
@@ -139,15 +151,11 @@ namespace SocksNStuff
             }
             else
             {
-                List<CartItem> cartItems = Session["CartItems"] as List<CartItem>;
-                foreach (var item in cartItems)
+                if(quantity < 0)
                 {
-
-                    if (productId == item.Id)
-                    {
-                        item.quantity = 1;
-                        item.totalPrice = quantity * item.product.Price;
-                    }
+                    errorlabel.Text = "Enter a number greater than 0";
+                    errorlabel.Visible = true;
+                    return;
                 }
 
                 errorlabel.Text = "Enter a valid number";
