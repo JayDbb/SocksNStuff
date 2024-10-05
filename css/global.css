@@ -1,5 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+
+
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -17,11 +19,13 @@ textarea {
 
 
 body {
+    background-color: #020118;
+    color: white;
     font-family: 'Inter', sans-serif;
 }
 
 .navbar {
-    background-color: #333;
+    background-color: #7e6efb;
 }
 
     .navbar a {
@@ -55,7 +59,8 @@ p{
     text-align: left !important;
     margin-bottom: 20px;
 }
-
+    .product-card p{
+    }
     .product-card h5 {
         background-color: cadetblue;
         font-style: italic;
@@ -63,7 +68,7 @@ p{
         text-align: center;
         color: white;
         border-radius: 4px;
-        border: 1px solid #7eabad;
+        border: 1px solid #8bdcde;
     }
 
     .product-card img {
@@ -72,7 +77,28 @@ p{
         /*object-fit: cover;*/ /* Crop the image if it exceeds the container */
         /*object-position: top;*/ /* Align the image to the top, cutting off the bottom */
     }
+/* {
+    background-color: cadetblue !important;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #8bdcde
+}*/
+button, .cartButton {
+    margin-top: 10px;
+    background-color: cadetblue !important;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #8bdcde;
+    color: white;
 
+}
+/*
+input{
+    border: none;
+    background-color:darkcyan;
+    color: white;
+    border-radius: 4px;
+}*/
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

@@ -11,34 +11,52 @@ namespace SocksNStuff
 {
 
 
-    public partial class _Default
+    public partial class Cart
     {
 
         /// <summary>
-        /// cartButton control.
+        /// CartItemsPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cartButton;
+        protected global::System.Web.UI.WebControls.Panel CartItemsPanel;
 
         /// <summary>
-        /// Button1 control.
+        /// CartItemsRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Repeater CartItemsRepeater;
 
         /// <summary>
-        /// Button2 control.
+        /// SubtotalLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label SubtotalLabel;
+
+        /// <summary>
+        /// TaxLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TaxLabel;
+
+        /// <summary>
+        /// TotalLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalLabel;
     }
 }

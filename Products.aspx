@@ -13,8 +13,10 @@
                         <h5>ID: 1</h5>
                         <p>Category: Sock Gadgets</p>
                         <p>Price: $199.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>A futuristic gadget that looks like a sock but powers your electronics! Who knew socks could be so shocking?</p>
+                         <asp:Button class="py-2 text-white cartButton" id="cartButton" CommandArgument="1" runat="server" Text="Add To Cart" OnClick="AddToCart" />
 
                     </div>
                 </div>
@@ -28,8 +30,10 @@
                         <h5>ID: 2</h5>
                         <p>Category: Fancy Feet Apparel</p>
                         <p>Price: $49.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>A sock-inspired fashion piece that elevates your wardrobe. Finally, an excuse to wear socks to a formal event!</p>
+                         <asp:Button class="py-2 text-white cartButton" id="Button1" CommandArgument="2" runat="server" Text="Add To Cart" OnClick="AddToCart" />
                     </div>
                 </div>
             </div>
@@ -42,8 +46,10 @@
                         <h5>ID: 3</h5>
                         <p>Category: Sock-cessories</p>
                         <p>Price: $299.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>The sock that folds socks for you! Say goodbye to mismatched socks and hello to perfection.</p>
+                         <asp:Button class="py-2 text-white cartButton" id="Button2" CommandArgument="3" runat="server" Text="Add To Cart" OnClick="AddToCart" />
                     </div>
 
                 </div>
@@ -58,8 +64,10 @@
                         <h5>ID: 4</h5>
                         <p>Category: Spooky Socks</p>
                         <p>Price: $9.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>Women's crossbones sock for those days when you feel like toe-tally owning the pirate look!</p>
+                         <asp:Button class="py-2 text-white cartButton" id="Button3" CommandArgument="4" runat="server" Text="Add To Cart" OnClick="AddToCart" />
                     </div>
                 </div>
             </div>
@@ -71,8 +79,10 @@
                         <h5>ID: 5</h5>
                         <p>Category: Fruity Footwear</p>
                         <p>Price: $11.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>Men's tropical pattern sock. Perfect for making your sock drawer look a little extra, like your favorite rainbow.</p>
+                         <asp:Button class="py-2 text-white cartButton" id="Button4" CommandArgument="5" runat="server" Text="Add To Cart" OnClick="AddToCart" />
                     </div>
                 </div>
             </div>
@@ -84,8 +94,10 @@
                         <h5>ID: 6</h5>
                         <p>Category: Cozy Toes</p>
                         <p>Price: $8.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>Cozy woolen socks to keep your toes toasty, no matter how cold it gets. Perfect for socking it to winter!</p>
+                         <asp:Button class="py-2 text-white cartButton" id="Button5" CommandArgument="6" runat="server" Text="Add To Cart" OnClick="AddToCart" />
                     </div>
                 </div>
             </div>
@@ -98,8 +110,10 @@
                         <h5>ID: 7</h5>
                         <p>Category: Funky Feet</p>
                         <p>Price: $12.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>Striped pattern socks that bring the party to your feet. Because sometimes your toes just need to dance!</p>
+                         <asp:Button class="py-2 text-white cartButton" id="Button6" CommandArgument="7" runat="server" Text="Add To Cart" OnClick="AddToCart" />
                     </div>
                 </div>
             </div>
@@ -111,8 +125,10 @@
                         <h5>ID: 8</h5>
                         <p>Category: Sockcycle</p>
                         <p>Price: $10.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>Unisex bicycle print socks for the stylish cyclist who likes to keep their sock game on a roll.</p>
+                         <asp:Button class="py-2 text-white cartButton" id="Button7" CommandArgument="8" runat="server" Text="Add To Cart" OnClick="AddToCart" />
                     </div>
                 </div>
             </div>
@@ -124,8 +140,10 @@
                         <h5>ID: 9</h5>
                         <p>Category: Wild Socks</p>
                         <p>Price: $13.99</p>
+                        <hr />
                         <p><i>Description:</i></p>
                         <p>Black And White print socks that make you feel like the king or queen of the sock jungle!</p>
+                         <asp:Button class="py-2 text-white cartButton" id="Button8" CommandArgument="9" runat="server" Text="Add To Cart" OnClick="AddToCart" />
                     </div>
                 </div>
             </div>
