@@ -90,6 +90,7 @@ button, .cartButton {
     border-radius: 8px;
     border: 1px solid #8bdcde;
     color: white;
+    text-decoration:none;
 
 }
 /*

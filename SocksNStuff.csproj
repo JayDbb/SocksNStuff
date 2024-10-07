@@ -121,6 +121,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\global.css" />
     <Content Include="Default.aspx" />
+    <Content Include="assets\Lost-amico %281%29.png" />
+    <Content Include="Oops.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Products.aspx" />
@@ -219,6 +221,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -257,6 +266,7 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
+    <Folder Include="ErrorPages\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

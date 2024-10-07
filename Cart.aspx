@@ -52,7 +52,7 @@
 
             <div class="col-md-4 col-sm-12 mt-4 mt-md-0">
                 <div class="card shadow-sm">
-                    <div class="card-header bg-success text-white">
+                    <div style="background-color:cadetblue" class="card-header text-white">
                         <h5 class="mb-0 text-center text-md-start">Cart Summary</h5>
                     </div>
                     <div class="card-body" style="color: black">
