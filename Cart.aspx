@@ -25,9 +25,9 @@
                                     <asp:Repeater runat="server" ID="CartItemsRepeater">
                                         <ItemTemplate>
                                             <tr>
-                                                <td><%# Eval("product.ProductName") %></td>
+                                                <td><%# Eval("Name") %></td>
                                                 <td>
-                                                    <asp:HiddenField ID="ProductIDHiddenField" runat="server" Value='<%# Eval("product.Id") %>' />
+                                                    <asp:HiddenField ID="ProductIDHiddenField" runat="server" Value='<%# Eval("Id") %>' />
 
                                                     <!-- Update the input style for mobile responsiveness -->
                                                     <asp:TextBox runat="server" AutoPostBack="true" OnTextChanged="ChangeQuantity" CssClass="form-control form-control-sm" Text='<%# Eval("Quantity") %>' />
@@ -35,7 +35,7 @@
 
                                                     <%--<input onchange="ChangeQuantity" type="number" class="form-control form-control-sm" value='<%# Eval("Quantity") %>' min="1" />--%>
                                                 </td>
-                                                <td><%# String.Format("{0:C}", Eval("product.Price")) %></td>
+                                                <td><%# String.Format("{0:C}", Eval("Price")) %></td>
                                                 <td><%# String.Format("{0:C}", Eval("totalPrice")) %></td>
                                                 <td>
                                                     <asp:Button runat="server" Text="Remove" CommandArgument='<%# Eval("Id") %>' CssClass="btn btn-danger btn-sm" OnClick="RemoveItem" />
@@ -70,7 +70,7 @@
                             <span><asp:Label runat="server" ID="TotalLabel" Text="$0.00"></asp:Label></span>
                         </h5>
                         <!-- Add mobile-friendly button -->
-                        <%--<asp:Button runat="server" Text="Checkout" CssClass="btn btn-success btn-block mt-3" OnClick="Checkout_Click" />--%>
+                        <asp:Button runat="server" Text="Checkout" CssClass="btn btn-success btn-block mt-3" OnClick="Checkout" />
                     </div>
                 </div>
             </div>

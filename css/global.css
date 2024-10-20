@@ -11,12 +11,15 @@
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
+p > a {
+    color: #8bdcde !important;
+}
 
 body {
     background-color: #020118;
@@ -64,7 +67,7 @@ p{
     .product-card h5 {
         background-color: cadetblue;
         font-style: italic;
-        width: 50px;
+        width: 30%;
         text-align: center;
         color: white;
         border-radius: 4px;
@@ -93,6 +96,7 @@ button, .cartButton {
     text-decoration:none;
 
 }
+
 /*
 input{
     border: none;

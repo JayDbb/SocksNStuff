@@ -7,7 +7,8 @@
         <a href="Products.aspx" class="btn btn-primary">Browse More Products</a>
         <hr />
 
-
+        
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
 
         <div class="row">
             <div class="col-md-4">

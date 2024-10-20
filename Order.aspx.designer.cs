@@ -11,16 +11,25 @@ namespace SocksNStuff
 {
 
 
-    public partial class Products
+    public partial class Order1
     {
 
         /// <summary>
-        /// ProductsRepeater control.
+        /// OrderNumberLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater ProductsRepeater;
+        protected global::System.Web.UI.WebControls.Label OrderNumberLabel;
+
+        /// <summary>
+        /// OrderTotalLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label OrderTotalLabel;
     }
 }
