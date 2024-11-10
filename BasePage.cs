@@ -64,7 +64,7 @@ namespace SocksNStuff
                     cartDC.Carts.DeleteOnSubmit(cartDC.Carts.FirstOrDefault(c => c.ItemId == productId));
                     cartDC.SubmitChanges();
 
-                    Response.Redirect("/Cart");
+                    Response.Redirect("/User/Cart");
                     return;
                 }
 
@@ -79,7 +79,7 @@ namespace SocksNStuff
 
                 cartDC.SubmitChanges();
 
-                Response.Redirect("/Cart");
+                Response.Redirect("/User/Cart");
             }
             else
             {
@@ -101,7 +101,7 @@ namespace SocksNStuff
         public void AddToCart(object sender, EventArgs e)
         {
             // Check if Authorized
-            if(Session["isAuth"] == null || !(bool)Session["isAuth"])
+            if (User.Identity.Name == null)
             {
                 Response.Redirect("/Login");
                 return;
@@ -109,7 +109,23 @@ namespace SocksNStuff
 
             // Check for user Cart
             CartDCDataContext cartDC = new CartDCDataContext(cs);
-            var userId = (int)Session["UserId"];
+
+            CustomerDataClassDataContext customerData = new CustomerDataClassDataContext(cs);
+            var user = customerData.Customers.FirstOrDefault(x => x.Email == User.Identity.Name);
+            var userId = 0;
+
+            if (user != null)
+            {
+
+                userId = user.Id;
+
+            }
+            else
+            {
+                //Response.Redirect("/Login");
+                return;
+            }
+
 
             List<Cart> userCart = cartDC.Carts.Where(x => x.UserId == userId).ToList();
 
@@ -131,7 +147,7 @@ namespace SocksNStuff
 
             cartDC.SubmitChanges();
 
-            Response.Redirect("/Cart");
+            Response.Redirect("/User/Cart");
         }
     }
 }

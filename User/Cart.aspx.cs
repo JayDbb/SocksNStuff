@@ -1,4 +1,7 @@
-﻿using SocksNStuff.Models;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using SocksNStuff.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,11 +16,16 @@ namespace SocksNStuff
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["isAuth"] == null || !(bool)Session["isAuth"])
+            if (User.Identity.Name == null)
             {
                 Response.Redirect("/Login");
                 return;
             }
+            //if (Session["isAuth"] == null || !(bool)Session["isAuth"])
+            //{
+            //    Response.Redirect("/Login");
+            //    return;
+            //}
 
             if (!IsPostBack)
             {
@@ -42,17 +50,36 @@ namespace SocksNStuff
             cartDC.SubmitChanges();
          
 
-            Response.Redirect("/Cart");
+            Response.Redirect("/User/Cart");
 
         }
         private void BindCart()
         {
             
-                string cs = ConfigurationManager.ConnectionStrings["SocksNStuffConnectionString"].ConnectionString;
+            var userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+            // Retrieve the full user object using the current user's identity name
+            //IdentityUser user = userManager.FindByName(User.Identity.Name);
+            var cs = ConfigurationManager.ConnectionStrings["SocksNStuffConnectionString"].ConnectionString;
+            CustomerDataClassDataContext customerData = new CustomerDataClassDataContext(cs);
+            var user = customerData.Customers.FirstOrDefault(x=> x.Email == User.Identity.Name);
+            var userId = 0;
+
+            if (user != null)
+            {
+
+                 userId = user.Id;
+
+            }
+            else
+            {
+                //Response.Redirect("/Login");
+                return;
+            }
                 CartDCDataContext cartDC = new CartDCDataContext(cs);
                 ProductDCDataContext productDC = new ProductDCDataContext(cs);
 
-                var userId = (int)Session["UserId"];
+
 
             List<Cart> myCart = cartDC.Carts.Where(x => x.UserId == userId).ToList();
 
@@ -113,7 +140,7 @@ namespace SocksNStuff
             int orderId = newOrder.OrderId;
 
 
-            Response.Redirect("/Order?order=" + orderId);
+            Response.Redirect("/User/Order?order=" + orderId);
         }
 
     }

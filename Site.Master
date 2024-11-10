@@ -60,19 +60,36 @@ Semester 1 2024/2025
                 </button>
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About">About</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Products">Products</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Manage">Manage</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="/About">About</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="/Contact">Contact</a></li>
+                      <% if (Page.User.IsInRole("Admin"))
+                          {%>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Admin/Manage">Manage</a>
+                            </li>
+                        <li>
+                                <a class="nav-link" href="/Admin/Users">Users</a>
 
+                        </li>
+                        <%}
+                            else if (Page.User.IsInRole("User"))
+                            { %>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="/User/Products">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="/User/Orders">Orders</a></li>
+                        <%} %>
                     </ul>
                       <ul class="navbar-nav ">
+                         <% if (Page.User.IsInRole("User")) { %>
+                          <li id="liCart" class="nav-item" runat="server"><a class="nav-link" runat="server" href="/User/Cart">Cart</a></li>
                         <li id="logout" class="nav-item" runat="server"><asp:LinkButton class="nav-link" runat="server" OnClick="Logout">Logout</asp:LinkButton></li>
-                        <li id="liCart" class="nav-item" runat="server"><a class="nav-link" runat="server" href="~/Cart">Cart</a></li>
-      <li id="login" class="nav-item" runat="server"><a class="nav-link" runat="server" href="~/Login">Login</a></li>
-      <li id="signup" class="nav-item" runat="server"><a class="nav-link" runat="server" href="~/SignUp">Sign Up</a></li>
+   <% } else if (Page.User.IsInRole("Admin")) { %>
+                     <li id="Li2" class="nav-item" runat="server"><asp:LinkButton class="nav-link" runat="server" OnClick="Logout">Logout</asp:LinkButton></li>
+<% } else { %>
+      <li id="login" class="nav-item" runat="server"><a class="nav-link" runat="server" href="/Login">Login</a></li>
+      <li id="signup" class="nav-item" runat="server"><a class="nav-link" runat="server" href="/SignUp">Sign Up</a></li>
 
+   <% } %>
 
   </ul>
                 </div>

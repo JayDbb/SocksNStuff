@@ -4,7 +4,7 @@
     <div class="jumbotron text-center">
         <h1>Welcome to Our Online Store!</h1>
         <p>Discover our featured products.</p>
-        <a href="Products.aspx" class="btn btn-primary">Browse More Products</a>
+        <a href="/User/Products.aspx" class="btn btn-primary">Browse More Products</a>
         <hr />
 
         

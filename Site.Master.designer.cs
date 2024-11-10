@@ -15,6 +15,15 @@ namespace SocksNStuff
     {
 
         /// <summary>
+        /// liCart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liCart;
+
+        /// <summary>
         /// logout control.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,13 @@ namespace SocksNStuff
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl logout;
 
         /// <summary>
-        /// liCart control.
+        /// Li2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl liCart;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Li2;
 
         /// <summary>
         /// login control.

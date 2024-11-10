@@ -60,6 +60,15 @@ namespace SocksNStuff
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
 
         /// <summary>
+        /// PasswordStrengthValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator PasswordStrengthValidator;
+
+        /// <summary>
         /// btnLogin control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace SocksNStuff
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLogin;
+
+        /// <summary>
+        /// ErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ModelErrorMessage ErrorMessage;
 
         /// <summary>
         /// AccontExist control.

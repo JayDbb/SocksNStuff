@@ -27,9 +27,19 @@
                 <asp:Label AssociatedControlID="txtPassword" runat="server" CssClass="form-label">Password</asp:Label>
                 <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" Placeholder="Enter your password" />
                 <asp:RequiredFieldValidator ControlToValidate="txtPassword" ErrorMessage="Please enter a valid password." CssClass="text-danger mt-1" runat="server" Display="Dynamic" />
-            </div>
+           <asp:RegularExpressionValidator 
+    ID="PasswordStrengthValidator" 
+    runat="server" 
+    ControlToValidate="txtPassword"
+    ErrorMessage="Password must be at least 8 characters long, and include uppercase, lowercase, a number, and a special character." 
+    ValidationExpression="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$"
+               Display="Dynamic"
+               CssClass="text-danger">
+</asp:RegularExpressionValidator>
+                </div>
 
             <asp:Button ID="btnLogin" runat="server" Text="Sign Up" CssClass="btn btn-primary w-100 mt-4" OnClick="ShopSignUp" />
+        <asp:ModelErrorMessage ID="ErrorMessage" CssClass="text-danger" runat="server" Display="Dynamic" />
               <asp:CustomValidator
       ID="AccontExist"
       runat="server"
