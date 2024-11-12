@@ -119,10 +119,29 @@ namespace SocksNStuff
 
             OrdersDCDataContext orderDC = new OrdersDCDataContext(cs);
             string totalText = TotalLabel.Text.Replace("$", "").Replace(",", "").Trim();
+
+
+            CustomerDataClassDataContext customerData = new CustomerDataClassDataContext(cs);
+            var user = customerData.Customers.FirstOrDefault(x => x.Email == User.Identity.Name);
+            var userId = 0;
+
+            if (user != null)
+            {
+
+                userId = user.Id;
+
+            }
+            else
+            {
+                //Response.Redirect("/Login");
+                return;
+            }
+
+
             Order newOrder = new Order
             {
 
-                UserId = (int)Session["UserId"],
+                UserId = userId,
                 Total = float.Parse(totalText),
                 DateAdded = DateTime.Today,
 
@@ -133,7 +152,7 @@ namespace SocksNStuff
             orderDC.SubmitChanges();
 
             CartDCDataContext cartDC = new CartDCDataContext(cs);
-            cartDC.Carts.DeleteAllOnSubmit(cartDC.Carts.Where(x => x.UserId == (int)Session["UserId"]));
+            cartDC.Carts.DeleteAllOnSubmit(cartDC.Carts.Where(x => x.UserId == userId));
 
             cartDC.SubmitChanges();
 

@@ -16,7 +16,7 @@
                         
                         <p class="text-muted">You will receive a confirmation email shortly with the details of your purchase.</p>
                         
-                        <asp:Button runat="server" Text="Continue Shopping" CssClass="btn btn-primary btn-lg mt-4" PostBackUrl="~/Products.aspx" />
+                        <asp:Button runat="server" Text="Continue Shopping" CssClass="btn btn-primary btn-lg mt-4" PostBackUrl="/User/Products.aspx" />
                     </div>
                 </div>
             </div>
